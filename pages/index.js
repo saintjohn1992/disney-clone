@@ -45,9 +45,16 @@ return {
 
 export default function Home({videos}) {
   
+  const randomVideo = (videos) => {
+    return videos[Math.floor(Math.random() * videos.length)]
+  }
   return (
-    <div>
-      Hello
+  <>
+  <div className="app">
+    <div className="main-video">
+      <img src={randomVideo(videos).thumbnail.url} alt={randomVideo(videos).title}></img>
     </div>
+  </div>
+  </>
   )
 }
